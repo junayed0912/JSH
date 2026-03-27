@@ -1,54 +1,51 @@
-JSH: Junayed SHell
-JSH is a POSIX-compliant, lightweight command-line interpreter designed for Unix-like operating systems. Built with C++17, it provides a robust interface for process control, file stream redirection, and system navigation across Linux, BSD, and macOS.
+💻 JSH: Junayed SHell
+A POSIX-compliant, lightweight command-line interpreter for Unix-like systems.
 
-Technical Objectives:
-The goal of JSH is to provide a clean, dependency-free shell environment that adheres to standard Unix execution patterns while maintaining a modern C++ codebase.
+JSH is built with C++17 to provide a robust interface for process control, file stream redirection, and system navigation across Linux (Fedora/Ubuntu), BSD, and macOS.
 
-Key Features:
+🚀 Key Features
 1. POSIX-Standard Execution
-JSH utilizes the fundamental Unix process model:
+JSH adheres to standard Unix execution patterns:
 
-Process Spawning: Uses fork() and execvp() to ensure compatibility with all standard system binaries.
+Process Spawning: Uses fork() and execvp() for compatibility with all system binaries.
 
-Stream Redirection: Implements dup2() for precise control over stdout (1) and stderr (2), supporting both overwrite (>) and append (>>) modes.
+Stream Redirection: Implements dup2() for precise control over stdout (1) and stderr (2). Supports:
 
-Environment Integration: Dynamically resolves the $PATH and $HOME variables to ensure a seamless transition from other shells.
+Overwrite (>)
+
+Append (>>)
+
+Environment Integration: Dynamically resolves $PATH and $HOME for seamless transitions.
 
 2. Advanced Lexical Analysis
-The JSH tokenizer (handleLine) is designed to handle complex command-line strings:
+The custom handleLine tokenizer manages complex strings:
 
-Literal & Grouping: Full support for single (') and double (") quotes.
+Quotes: Full support for single (') and double (") quotes.
 
-Escape Sequences: Sophisticated handling of backslash (\) escape characters to allow special characters in filenames and arguments.
+Escaping: Handles backslash (\) escape characters for filenames and arguments.
 
-Space Normalization: Automatically handles irregular spacing and leading/trailing whitespace.
+Normalization: Automatically cleans up irregular spacing and whitespace.
 
 3. Native Built-in Suite
-Optimized internal functions for core operations:
+Optimized internal functions for zero-latency operations:
 
-cd: Directory navigation with ~ home directory resolution.
+cd — Directory navigation with ~ resolution.
 
-pwd: Current directory reporting via getcwd.
+pwd — Real-time reporting via getcwd.
 
-type: Command origin diagnostics (built-in vs. external).
+type — Identifies if a command is builtin or external.
 
-echo: Formatted output with full quote/escape support.
+echo — Formatted output with full quote/escape support.
 
-help: Integrated command documentation.
+help — Integrated command documentation.
 
-🛠️ Build & Requirements
-JSH is designed to be highly portable across any POSIX-compliant system.
+clear — Terminal screen reset.
 
-Compiler: g++ or clang++ (C++17 support required).
-
-OS: Linux (Fedora/Ubuntu/etc.), FreeBSD, or macOS.
-
-./jsh
 🗺️ Roadmap
-[ ] Tab Autocompletion: (Planned) Implementing readline or custom TTY handling for command and path completion.
+[ ] Tab Autocompletion: Custom TTY handling for command/path completion.
 
-[ ] Piping: Connecting processes via pipe() for complex command chains.
+[ ] Piping: Connecting processes via pipe().
 
 [ ] Job Control: Background process management (&).
 
-[ ] Scripting Support: Ability to execute .jsh scripts.
+[ ] Scripting: Support for executing .jsh scripts.
