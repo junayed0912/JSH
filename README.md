@@ -20,34 +20,36 @@ JSH is built with C++17 to provide a robust interface for process control, file 
 
 
 2. Advanced Lexical Analysis
-  The custom handleLine tokenizer manages complex strings:
 
-  Quotes: Full support for single (') and double (") quotes.
+   The custom handleLine tokenizer manages complex strings:
 
-  Escaping: Handles backslash (\) escape characters for filenames and arguments.
+        Quotes: Full support for single (') and double (") quotes.
 
-  Normalization: Automatically cleans up irregular spacing and whitespace.
+        Escaping: Handles backslash (\) escape characters for filenames and arguments.
+
+        Normalization: Automatically cleans up irregular spacing and whitespace.
 
 
 
-3. Native Built-in Suite
+4. Native Built-in Suite
    Optimized internal functions for zero-latency operations:
 
-    cd — Directory navigation with ~ resolution.
+        cd — Directory navigation with ~ resolution.
 
-    pwd — Real-time reporting via getcwd.
+        pwd — Real-time reporting via getcwd.
 
-    type — Identifies if a command is builtin or external.
+        type — Identifies if a command is builtin or external.
 
-    echo — Formatted output with full quote/escape support.
+        echo — Formatted output with full quote/escape support.
 
-    help — Integrated command documentation.
+        help — Integrated command documentation.
 
-    clear — Terminal screen reset.
+        clear — Terminal screen reset.
 
    
 
 🗺️ Roadmap
+
     [ ] Tab Autocompletion: Custom TTY handling for command/path completion.
 
     [ ] Piping: Connecting processes via pipe().
