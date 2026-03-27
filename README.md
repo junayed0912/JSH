@@ -11,9 +11,9 @@ JSH is built with C++17 to provide a robust interface for process control, file 
 
   Stream Redirection: Implements dup2() for precise control over stdout (1) and stderr (2). Supports:
 
-    Overwrite (>)
+        Overwrite (>)
 
-    Append (>>)
+        Append (>>)
 
   Environment Integration: Dynamically resolves $PATH and $HOME for seamless transitions.
 
@@ -46,14 +46,33 @@ JSH is built with C++17 to provide a robust interface for process control, file 
 
         clear — Terminal screen reset.
 
+5.Build & Installation
+
+To run this project on your machine, follow these steps:
+
+  Install Make (if not already installed):
+
+        On Fedora: sudo dnf install make
+
+        On Ubuntu/Debian: sudo apt install make
+
+        On macOS: xcode-select --install
+
+  Compile the source:
+
+        make
+        
+  Execute the shell:
+
+        ./main
    
 
 🗺️ Roadmap
 
-    [ ] Tab Autocompletion: Custom TTY handling for command/path completion.
+        [ ] Tab Autocompletion: Custom TTY handling for command/path completion.
 
-    [ ] Piping: Connecting processes via pipe().
+        [ ] Piping: Connecting processes via pipe().
 
-    [ ] Job Control: Background process management (&).
+        [ ] Job Control: Background process management (&).
 
-    [ ] Scripting: Support for executing .jsh scripts.
+        [ ] Scripting: Support for executing .jsh scripts.
